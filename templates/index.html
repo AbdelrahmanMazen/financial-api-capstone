@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Financial API</h1>
+    </header>
+
+    <main>
+        {% if error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        <section>
+            <h2>Add a Transaction</h2>
+            <form method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="id">ID:</label>
+                    <input type="number" id="id" name="id" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <div>
+                    <label for="amount">Amount:</label>
+                    <input type="number" step="0.01" id="amount" name="amount" required>
+                </div>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <button onclick="window.location.href='{% url 'transaction_history' %}'">Transaction History</button>
+    </footer>
+</body>
+</html>

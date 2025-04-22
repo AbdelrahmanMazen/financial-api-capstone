@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Transaction Detail</h1>
+        <nav>
+            <a href="{% url 'transaction_history' %}">Back to Transaction History</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Transaction ID: {{ transaction.id }}</h2>
+            <p><strong>Description:</strong> {{ transaction.description }}</p>
+            <p><strong>Amount:</strong> {{ transaction.amount }}</p>
+            <p><strong>User:</strong> {{ transaction.user }}</p>
+        </section>
+    </main>
+</body>
+</html>
