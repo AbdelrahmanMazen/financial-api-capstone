@@ -4,8 +4,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
 }
 
+/* Header Styles */
 header {
     background-color: #4CAF50;
     color: white;
@@ -13,18 +16,23 @@ header {
     text-align: center;
 }
 
+header nav {
+    margin-top: 10px;
+}
+
 header nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    margin-left: 20px;
+    margin: 0 15px;
+    font-size: 16px;
 }
 
 header nav a:hover {
     text-decoration: underline;
 }
 
-/* Main Content */
+/* Main Content Styles */
 main {
     padding: 20px;
     display: flex;
@@ -35,16 +43,27 @@ main {
 
 /* Table Styles */
 table {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 20px auto;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #4CAF50;
 }
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -52,6 +71,7 @@ table th {
     background-color: #4CAF50;
     color: white;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 table tr:nth-child(even) {
@@ -62,14 +82,16 @@ table tr:hover {
     background-color: #ddd;
 }
 
+/* Form Styles */
 form {
     background-color: white;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 form div {
@@ -80,30 +102,43 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 14px;
+    color: #333;
 }
 
-input {
+input, select, textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
+/* Link Styles */
 .transaction-link {
     text-align: center;
     margin-top: 20px;
@@ -113,8 +148,81 @@ button:hover {
     text-decoration: none;
     color: #4CAF50;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .transaction-link a:hover {
     text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between elements */
+}
+
+footer h5 {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+footer button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+/* Enhanced Transaction History Button */
+.transaction-history-btn {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.transaction-history-btn:hover {
+    background-color: #fcfcfc;
+    color: #4CAF50;
+    border-color: #446046;
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.transaction-history-btn:active {
+    transform: scale(0.95); /* Adds a pressed effect */
+}
+
+/* Center the Transaction Title */
+.transaction-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
 }

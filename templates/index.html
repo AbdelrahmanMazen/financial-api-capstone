@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the Financial API</h1>
+        <h1>Welcome to the Financial API💰</h1>
+        <h3>Capestone Project For Full-Stack Course🪄</h3>
+        
     </header>
 
     <main>
@@ -19,7 +21,7 @@
             </div>
         {% endif %}
         <section>
-            <h2>Add a Transaction</h2>
+            <h2 class="transaction-title">Add a Transactions Here</h2>
             <form method="POST" action="{% url 'home' %}">
                 {% csrf_token %}
                 <div>
@@ -40,7 +42,12 @@
     </main>
 
     <footer>
-        <button onclick="window.location.href='{% url 'transaction_history' %}'">Transaction History</button>
-    </footer>
+    <div class="footer-container">
+        <button class="transaction-history-btn" onclick="window.location.href='{% url 'transaction_history' %}'">
+            View Transaction History
+        </button>
+        <h5>© 2025 Abdelrhman Mazen</h5>
+    </div>
+</footer>
 </body>
 </html>

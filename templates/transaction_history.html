@@ -17,13 +17,12 @@
 
     <main>
         <section>
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Description</th>
                         <th>Amount</th>
-                        <th>User</th>
                         <th>Token</th>
                     </tr>
                 </thead>
@@ -33,26 +32,19 @@
                         <td>{{ transaction.id }}</td>
                         <td>{{ transaction.description }}</td>
                         <td>{{ transaction.amount }}</td>
-                        <td>{{ transaction.user }}</td>
                         <td>{{ transaction.token }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <div>
-                <span>
-                    {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                    {% endif %}
-                </span>
-                <span>
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                </span>
-                <span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                    {% endif %}
-                </span>
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
             </div>
         </section>
     </main>
